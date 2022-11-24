@@ -608,8 +608,8 @@ for (let button of buttonNumber) {
 for (let button of operation) {
     if (button) {
         button.addEventListener("click", function () {
-            let dataOperande = button.innerHTML;
-            return result.innerHTML += dataOperande;
+            let data = button.innerHTML;
+            return result.innerHTML += data;
         });
     }
 }

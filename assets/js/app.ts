@@ -17,8 +17,8 @@ for (let button of buttonNumber){
 for (let button of operation) {
     if (button) {
         button.addEventListener("click", function (): string {
-            let dataOperande: string = button.innerHTML;
-            return result.innerHTML += dataOperande;
+            let data: string = button.innerHTML;
+            return result.innerHTML += data;
         })
     }
 }
