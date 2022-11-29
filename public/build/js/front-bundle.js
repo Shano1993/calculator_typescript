@@ -597,25 +597,26 @@ let result = document.getElementById("result");
 let buttonNumber = document.getElementsByClassName("button_number");
 let operation = document.getElementsByClassName("operation");
 let resultButton = document.getElementById("result_button");
-for (let button of buttonNumber) {
-    if (button) {
-        button.addEventListener("click", function () {
-            let dataNumber = button.innerHTML;
-            return result.innerHTML += dataNumber;
-        });
+let data1;
+let data2;
+function valueButtons(collection) {
+    for (let button of collection) {
+        if (button) {
+            button.addEventListener("click", function () {
+                data1 = button.innerHTML;
+                return result.innerHTML += data1;
+            });
+        }
+        if (resultButton) {
+            resultButton.addEventListener("click", function () {
+                data2 = button.innerHTML;
+                result.value = "";
+            });
+        }
     }
 }
-for (let button of operation) {
-    if (button) {
-        button.addEventListener("click", function () {
-            let data = button.innerHTML;
-            return result.innerHTML += data;
-        });
-    }
-}
-resultButton.addEventListener("click", function () {
-    return result.innerHTML = eval(result.innerHTML);
-});
+valueButtons(buttonNumber);
+valueButtons(operation);
 
 })();
 
